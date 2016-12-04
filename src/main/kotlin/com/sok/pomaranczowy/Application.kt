@@ -1,31 +1,25 @@
 package com.sok.pomaranczowy
 
-//import org.springframework.transaction.annotation.EnableTransactionManagement
+import com.sok.pomaranczowy.dba.EmployeeRepository
+import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor
-import org.springframework.jdbc.datasource.DataSourceTransactionManager
-import org.springframework.transaction.annotation.EnableTransactionManagement
-import javax.sql.DataSource
 
 /**
  * Created by sok_pomaranczowy on 27.11.16.
  */
 @SpringBootApplication
-@ComponentScan("com.sok.pomaranczowy")
-@Configuration
-@EnableTransactionManagement
-open class Application(){
+//@ComponentScan(basePackages = arrayOf("com.sok.pomaranczowy.dba","com.sok.pomaranczowy.rest"))
+//@Configuration
+open class Application() {
 
     @Bean
-    open fun transactionManager(dataSource: DataSource) = DataSourceTransactionManager(dataSource)
-
-
-    @Bean
-    open fun persistenceExceptionTranslationPostProcessor() = PersistenceExceptionTranslationPostProcessor()
+    open fun init(repository: EmployeeRepository) = CommandLineRunner{
+        println("Duuuupa")
+    }
 
     companion object {
         @JvmStatic fun main(args: Array<String>) {

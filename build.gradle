@@ -24,23 +24,16 @@ war {
 
 repositories {
     jcenter()
-    maven {
-        url 'https://dl.bintray.com/kotlin/exposed'
-    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
     compile 'org.springframework.boot:spring-boot-starter-web'
-    compile group: 'org.springframework', name: 'spring-tx', version: '4.1.4.RELEASE'
     compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.4")
-    compile 'org.jetbrains.exposed:exposed:0.7.4'
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
-
-    compile("org.springframework.boot:spring-boot-starter-jdbc")
-    compile("org.springframework.boot:spring-boot-devtools")
-
-
+    compile("au.com.console:kotlin-jpa-specification-dsl:0.1.0")
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    //compile group: 'org.springframework', name: 'spring-beans', version: '3.0.5.RELEASE'
     testCompile 'junit:junit'
 }
 
