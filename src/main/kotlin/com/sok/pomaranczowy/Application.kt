@@ -16,10 +16,11 @@ import org.springframework.context.annotation.Configuration
 //@Configuration
 open class Application() {
 
+/*
     @Bean
     open fun init(repository: EmployeeRepository) = CommandLineRunner{
-        println("Duuuupa")
     }
+*/
 
     companion object {
         @JvmStatic fun main(args: Array<String>) {

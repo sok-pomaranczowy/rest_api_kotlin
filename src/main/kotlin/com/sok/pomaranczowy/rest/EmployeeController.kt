@@ -1,5 +1,6 @@
 package com.sok.pomaranczowy.rest;
 
+import com.sok.pomaranczowy.dba.Employee
 import com.sok.pomaranczowy.dba.EmployeeRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -25,5 +26,10 @@ class EmployeeController() {
     @RequestMapping("/")
     fun index(): String {
         return employeeRepository.findAll().map { it.toString() }.toString()
+    }
+
+    @RequestMapping("/id")
+    fun index2(): String {
+        return employeeRepository.findOne(17484).toString()
     }
 }
